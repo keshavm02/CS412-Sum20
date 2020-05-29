@@ -1,6 +1,6 @@
 const evaluate = expression => {
-    const firstDigit = parseInt(expression[0])
-    const lastDigit = parseInt(expression[2])
+    const firstDigit = parseInt(expression[0]);
+    const lastDigit = parseInt(expression[2]);
     const operator = expression[1];
 
     switch(operator) {
