@@ -28,3 +28,5 @@ const expression2 = function3("supercalifragilisticexpialidocious", function cap
 });
 
 console.log(expression2);
+
+module.exports = {function3};
