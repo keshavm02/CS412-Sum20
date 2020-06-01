@@ -55,12 +55,12 @@ describe("Testing problem 3:", () => {
     });
 
     it('should return "{\n' +
-        '                originalString: originalString,\n' +
-        '                reversedString: reversedString,\n' +
-        '                spacedOutString: spacedOutString,\n' +
-        '                stringInListForm: stringInListForm,\n' +
-        '                stringLength: stringLength\n' +
-        '            }"', function () {
+        '            originalString: \'javascript\',\n' +
+        '            reversedString: \'tpircsavaj\',\n' +
+        '            spacedOutString: \'j a v a s c r i p t\',\n' +
+        '            stringInListForm: [\'j\', \'a\', \'v\', \'a\', \'s\', \'c\', \'r\', \'i\', \'p\', \'t\'],\n' +
+        '            stringLength: 10\n' +
+        '        }"', function () {
         let ret = function3('javascript', function getObject(s) {
             const originalString = s;
             const reversedString = s.split('').reverse().join('');
