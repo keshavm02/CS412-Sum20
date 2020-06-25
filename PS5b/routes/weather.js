@@ -22,7 +22,7 @@ router.route('/')
             if (match) {
                 let cityData = await getAsync(req.body.city);
                 let response = {
-                    cityData: cityData,
+                    cityData: JSON.parse(cityData),
                     cached: true
                 }
                 res.send(response);
