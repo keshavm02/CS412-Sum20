@@ -9,8 +9,6 @@ client.flushdb((err, success) => {
     if (err) { throw new Error(err)}
 });
 
-const setAsync = promisify(client.set).bind(client);
-
 
 router.route('/')
     .post(async (req, res, next) => {
@@ -19,6 +17,7 @@ router.route('/')
 
             const existsAsync = promisify(client.exists).bind(client);
             const getAsync = promisify(client.get).bind(client);
+            const setAsync = promisify(client.set).bind(client);
             let match = await existsAsync(req.body.city);
             if (match) {
                 let cityData = await getAsync(req.body.city);
