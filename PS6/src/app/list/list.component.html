@@ -1,0 +1,15 @@
+<div name="outerList">
+  <ul *ngFor="let location of locations">
+
+    <li (click)="showData(location.name)">{{location.name}}</li>
+
+  </ul>
+</div>
+
+<div name="details" *ngIf="selectedLocation">
+  <label>Temperature</label><br>
+  <input name="lastName" type="text" value="{{selectedLocation.temp}}">
+  <br><br>
+  <label>Humidity</label><br>
+  <input name="lastName" type="text" value="{{selectedLocation.humidity}}">
+</div>
