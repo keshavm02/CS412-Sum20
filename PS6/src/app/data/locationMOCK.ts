@@ -15,5 +15,10 @@ export const LOCATIONS: LOCATION[] = [
     temp: 31.6,
     humidity: 62,
     name: 'Miami'
+  },
+  {
+    temp: 24.21,
+    humidity: 65,
+    name: 'New York City'
   }
 ];

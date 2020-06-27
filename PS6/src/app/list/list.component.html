@@ -1,12 +1,13 @@
 <div name="outerList">
+  <h3>Click on a city to get its weather info:</h3>
   <ul *ngFor="let location of locations">
-
-    <li (click)="showData(location.name)">{{location.name}}</li>
+    <li (click)="showData(location.name)"><button>{{location.name}}</button></li>
 
   </ul>
 </div>
 
 <div name="details" *ngIf="selectedLocation">
+  <h2><b>{{selectedLocation.name}}</b></h2>
   <label>Temperature</label><br>
   <input name="lastName" type="text" value="{{selectedLocation.temp}}">
   <br><br>
