@@ -10,26 +10,26 @@ client.flushdb((err, success) => {
 });
 
 
-router.route('/')
-    .post(async (req, res, next) => {
+router.route('/:city')
+    .get(async (req, res, next) => {
 
         try {
 
             const existsAsync = promisify(client.exists).bind(client);
             const getAsync = promisify(client.get).bind(client);
             const setAsync = promisify(client.set).bind(client);
-            let match = await existsAsync(req.body.city);
+            let match = await existsAsync(req.params.city);
             if (match) {
-                let cityData = await getAsync(req.body.city);
+                let cityData = await getAsync(req.params.city);
                 let response = {
                     cityData: JSON.parse(cityData),
                     cached: true
                 }
                 res.send(response);
             } else {
-                let cityData = await fetch(CONFIG.url + '?q=' + req.body.city + '&units=metric&appid=' + CONFIG.key);
+                let cityData = await fetch(CONFIG.url + '?q=' + req.params.city + '&units=metric&appid=' + CONFIG.key);
                 cityData = await cityData.json();
-                setAsync(req.body.city, JSON.stringify(cityData), 'EX', 30);
+                setAsync(req.params.city, JSON.stringify(cityData), 'EX', 30);
                 let response = {
                     cityData: cityData,
                     cached: false
