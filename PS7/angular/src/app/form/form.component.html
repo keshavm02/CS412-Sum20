@@ -1,0 +1,20 @@
+<form (ngSubmit)="getWeatherByCity()">
+<!--  City: <input name="cityField" [(ngModel)]="city" required minlength="2" class="form-control">-->
+  <input id="cityField" name="cityField" class="form-control"
+         required minlength="2"
+         [(ngModel)]="city" #cityField="ngModel" >
+  <button *ngIf="cityField.errors" disabled>Submit</button>
+  <button *ngIf="!cityField.errors" type="submit">Submit</button>
+  <p>{{city}} current weather: {{currentWeather}}</p>
+</form>
+
+<div *ngIf="cityField.invalid && (cityField.dirty || cityField.touched)"
+     class="alert alert-danger">
+
+  <div *ngIf="cityField.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="cityField.errors.minlength">
+    Name must be at least 2 characters long.
+  </div>
+</div>

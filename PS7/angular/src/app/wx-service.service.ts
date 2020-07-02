@@ -6,9 +6,16 @@ import {HttpClient} from '@angular/common/http';
 })
 export class WxServiceService {
 
+  baseURL: string = 'http://localhost:3000/weather/';
   constructor(private http: HttpClient) { }
 
+  // tslint:disable-next-line:typedef
   getWeather() {
-    return this.http.get(`http://localhost:3000/weather/miami`);
+    return this.http.get(`${this.baseURL}boston`);
+  }
+
+  // tslint:disable-next-line:typedef
+  getWeatherByCity(city: string) {
+    return this.http.get(`${this.baseURL}${city}`);
   }
 }

@@ -12,10 +12,11 @@ export class AppComponent {
 
   constructor(private wxService: WxService) {}
 
+  // tslint:disable-next-line:typedef
   getWeather() {
     this.wxService.getWeather().subscribe(
       response => {
-        this.currentWeather = response["cityData"]["main"]["temp"] + " degrees";
+        this.currentWeather = response["cityData"]["main"]["temp"] + ' degrees';
         console.log(this.currentWeather);
       }
     );
