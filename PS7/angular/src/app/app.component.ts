@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {WxServiceService as WxService} from './wx-service.service';
 import {CITIES} from './cityList/cityMOCK';
 import {CITY} from './cityList/city';
 
@@ -15,15 +14,6 @@ export class AppComponent {
   locations: CITY[] = CITIES;
   selectedLocation: CITY;
 
-  constructor(private wxService: WxService) {}
+  constructor() {}
 
-  // tslint:disable-next-line:typedef
-  getWeather() {
-    this.wxService.getWeather().subscribe(
-      response => {
-        this.currentWeather = response["cityData"]["main"]["temp"] + ' degrees';
-        console.log(this.currentWeather);
-      }
-    );
-  }
 }
