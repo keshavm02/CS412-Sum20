@@ -14,7 +14,6 @@ export class FormComponent implements OnInit {
   city: any;
   @Output() eventEmitter: EventEmitter<any> = new EventEmitter<any>();
 
-  currentWeather: any;
 
   // tslint:disable-next-line:typedef
   emitEvent() {

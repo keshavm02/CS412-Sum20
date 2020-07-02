@@ -1,11 +1,9 @@
 <form (ngSubmit)="emitEvent()">
-<!--  City: <input name="cityField" [(ngModel)]="city" required minlength="2" class="form-control">-->
   <input id="cityField" name="cityField" class="form-control"
          required minlength="2"
          [(ngModel)]="city" #cityField="ngModel" >
   <button *ngIf="cityField.errors" disabled>Submit</button>
   <button *ngIf="!cityField.errors" type="submit">Submit</button>
-  <p>{{city}} current weather: {{currentWeather}}</p>
 </form>
 
 <!-- Below code copied from angular website to validate input -->
