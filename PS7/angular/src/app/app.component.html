@@ -1,5 +1,8 @@
 <h2>Welcome to the {{title}}.</h2>
 
 <h4>Here is a list of cities you might want to pick from:</h4>
+<ul *ngFor="let location of locations">
+  <li>{{location.name }}</li>
 
+</ul>
 <app-parent></app-parent>
