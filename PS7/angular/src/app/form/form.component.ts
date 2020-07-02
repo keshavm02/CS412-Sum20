@@ -17,19 +17,11 @@ export class FormComponent implements OnInit {
   currentWeather: any;
 
   // tslint:disable-next-line:typedef
-  emitEvent(){
+  emitEvent() {
     this.eventEmitter.emit(this.city);
   }
 
   ngOnInit(): void {
   }
 
-  // tslint:disable-next-line:typedef
-  getWeatherByCity() {
-    this.wxService.getWeatherByCity(this.city).subscribe(
-      response => {
-        this.currentWeather = response['cityData']['main']['temp'];
-      }
-    );
-  }
 }

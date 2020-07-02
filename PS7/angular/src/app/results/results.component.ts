@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-results',
@@ -6,9 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
+  // tslint:disable-next-line:no-input-rename
   @Input('currentWeather') currentWeather: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

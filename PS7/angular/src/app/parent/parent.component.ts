@@ -10,8 +10,6 @@ export class ParentComponent implements OnInit {
 
   constructor(private wxService: WxService) { }
   currentWeather: any;
-  city: string;
-
 
   // tslint:disable-next-line:typedef
   getWeatherByCity(cityName: string) {
