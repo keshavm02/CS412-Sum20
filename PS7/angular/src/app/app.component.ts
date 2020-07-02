@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {WxServiceService as WxService} from './wx-service.service';
-import {CITIES} from './data/cityMOCK';
-import {CITY} from './data/city';
+import {CITIES} from './cityList/cityMOCK';
+import {CITY} from './cityList/city';
 
 @Component({
   selector: 'app-root',
