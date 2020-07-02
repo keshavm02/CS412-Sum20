@@ -1,1 +1,4 @@
-<div *ngIf="currentWeather"><br>Current temperature is {{currentWeather}}</div>
+<div *ngIf="currentWeather">
+  <br>The current temperature in <b>{{cityName}}</b> is <u>{{currentWeather}}&#x2103;</u>.
+  <br>This data was <b>{{cacheValue}}</b>.
+</div>
